@@ -40,6 +40,9 @@ The project primarily consists of:
 - S3 Sink Connector: To stream data from MSK to S3.
 - Glue Crawler and Athena Query: To create a schema for the data stored in S3 and facilitate querying with Athena.
 
+
+![Overview Diagram](images/architecture.png "Overview of Data Pipeline")
+
 # Installation
 1. Prerequisites:
     - AWS CLI installed and configured with the appropriate credentials.
@@ -71,6 +74,10 @@ Usage
     terraform apply -auto-approve
     ```
 
+![Terraform Setup](images/Terraform%20Setup.png "Terraform Infrastructure Setup For Kafka")
+
+![Terraform Setup Complete](images/Terraform%20Setup%20Complete.png "Terraform Infrastructure Setup For Kafka Complete")
+
 ### Python Kafka Producer:
 Overview
 - A Python script fetches financial data from RapidAPI and streams it to the Kafka topic hosted on MSK.
@@ -81,6 +88,10 @@ Usage
     python3 python_kafka_stocks.py
     ```
 The script dynamically loads Kafka bootstrap servers from the Terraform output (kafka_brokers.json) and streams the data.
+
+![Kafka Producer Script Running](images/kafka_producer.png "Kafka Producer Running")
+
+![Kafka Producer Script Running](images/kafka_producer2.png "Kafka Producer Running")
 
 Libraries Used
    - requests: For API calls to RapidAPI.
@@ -98,6 +109,10 @@ Usage
     bin/connect-standalone.sh config/connect-standalone.properties /home/ec2-user/s3-sink.properties
     ```
 
+![S3 Sink Connector Setup](images/s3-connector-sink.png "S3 Sink Connector Setup")
+
+![S3 Sink Connector Setup](images/s3-connector-sink2.png "S3 Sink Connector Setup")
+
 ### AWS Glue Crawler and Athena Setup
 AWS Glue is used to scan the data in S3 and build a schema. Athena is then configured to query this data.
 
@@ -107,6 +122,10 @@ Key Terraform Components:
     - The Terraform code creates an Athena Database (finance_data_athena_db) and an Athena named query to define the table schema based on the data format in S3.
     - The named query is designed to be used for running SQL-like queries on the data using Amazon Athena.
 
+![Glue Crawler and Athena Setup](images/aws-glue-athena.png "Glue Crawler and Athena Setup")
+
+![Glue Crawler and Athena Setup](images/aws-glue-athena2.png "Glue Crawler and Athena Setup")
+
 
 ### Run the Data Pipeline
 
@@ -115,6 +134,9 @@ Key Terraform Components:
 3. S3 Sink Connector: Start Kafka Connect to stream data from MSK to S3.
 4. Glue Crawler: Run the Glue crawler to scan the S3 bucket.
 5. Athena Query: Use Athena to query and visualize the data.
+
+
+![Final Output](images/final-output.png "Final Output")
 
 
 ### Conclusion
