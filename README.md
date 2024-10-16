@@ -3,10 +3,6 @@
 
 ### RapidAPI Financial Data Stream to Amazon Athena
 
-Git-hub repository at:
-https://github.com/ShahidSalim-oss/Data-Pipeline-2.git 
-
-
 This project involves creating a real-time data pipeline that ingests financial market data from a public API, processes it with Amazon Managed Streaming for Apache Kafka (MSK), stores the data in Amazon S3, and visualizes the data using AWS Glue and Amazon Athena. The goal is to build an end-to-end data pipeline that facilitates data ingestion, processing, and querying with serverless technologies in AWS.
 
 # Table of Contents
