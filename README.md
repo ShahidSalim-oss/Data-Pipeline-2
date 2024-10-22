@@ -13,8 +13,8 @@ This project involves creating a real-time data pipeline that ingests financial 
 - [Terraform Infrastructure](#terraform-infrastructure)
 - [Python Kafka Producer](#python-kafka-producer)
 - [S3 Sink Connector](#s3-sink-connector)
-- [AWS Glue Crawler and Athena Setup](#awsgluecrawaler-and-athena-setup)
-- [Run the Data Pipeline](#run-the-datapipeline)
+- [AWS Glue Crawler and Athena Setup](#aws-glue-crawler-and-athena-setup)
+- [Run the Data Pipeline](#run-the-data-pipeline)
 - [Conclusion](#Conclusion)
 
 # Overview
